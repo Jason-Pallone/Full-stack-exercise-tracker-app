@@ -7,6 +7,7 @@ export default class ExercisesList extends Component {
 
     componentDidMount() {
       /* if in local use http://localhost:5000/exercises/ */
+      // retrieves all current exercise logs
       axios.get('/exercises/')
       .then(res => this.setState({ exercises: res.data }))
       .catch(err => console.error(err))
@@ -21,10 +22,10 @@ export default class ExercisesList extends Component {
           exercises: this.state.exercises.filter(el => el._id !== id)
       })
     }
-
+    
     exerciseList=()=>{
-        return this.state.exercises.map(currentExercise => {
-          return <Exercise exercise={currentExercise} deleteExercise={this.deleteExercise} key={currentExercise._id} />
+        return this.state.exercises.map(exerciseInfo => {
+          return <Exercise exercise={exerciseInfo} deleteExercise={this.deleteExercise} key={exerciseInfo._id} />
         })
     }
 

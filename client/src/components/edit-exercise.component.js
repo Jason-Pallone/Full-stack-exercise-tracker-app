@@ -14,6 +14,8 @@ export default class EditExercise extends Component {
   
       componentDidMount() {
         /* if in local use http://localhost:5000/exercises */
+
+        // retrives an exercise and user to edit
         axios.get('/exercises/'+this.props.match.params.id)
           .then(res => {
             this.setState({
@@ -71,6 +73,7 @@ export default class EditExercise extends Component {
   
         console.log(exercise)
         /* if in local use http://localhost:5000/exercises/update/ */
+        // post updated exercise
         axios.post('/exercises/update/'+this.props.match.params.id, exercise)
         .then(res => console.log(res.data));
       

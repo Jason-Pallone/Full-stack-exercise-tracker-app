@@ -14,6 +14,7 @@ export default class CreateExercise extends Component {
 
     componentDidMount() {
       /* if in local use http://localhost:5000/users/ */
+      // retrieves all current users
       axios.get('/users/')
         .then(res => {
           if (res.data.length > 0) {
@@ -61,11 +62,12 @@ export default class CreateExercise extends Component {
 
       console.log(exercise)
       /* for local use http://localhost:5000/exercises/add */
+      // creates new exercise log
       axios.post('/exercises/add', exercise)
       .then(res => console.log(res.data));
     
 
-      /* redirects back to homepage after submitting exercise info */
+      // redirects back to homepage after submitting exercise info 
       window.location = '/';
     }
 

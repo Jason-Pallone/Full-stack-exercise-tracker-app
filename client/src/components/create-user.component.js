@@ -12,7 +12,6 @@ export default class CreateUser extends Component {
         })
       }
 
-      
     onSubmit=(e)=> {
         e.preventDefault();
   
@@ -23,6 +22,7 @@ export default class CreateUser extends Component {
         console.log(user)
 
         /* if in local use http://localhost:5000/users/add/ */
+        // adds username to mongoDB Atlas
         axios.post('/users/add', user)
           .then(res => console.log(res.data));
         
