@@ -1,7 +1,18 @@
+/* animation for the welcome message */
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+h5 {
+  animation: fade-in .5s;
+}
+
 /* had to reduce thead element size to make it fit on mobile/tablet devices, had to add custom margin
 to the delete button because it would not align properly on mobile devices using bootstrap margins. */
 .btn-delete  {
-  margin-left: 2%
+  margin-left: 2%;
 }
 
 @media(max-width:768px) {
