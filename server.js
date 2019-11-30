@@ -27,8 +27,8 @@ const userRouter = require('./routes/users');
 
 app.use('/exercises', exerciseRouter);
 app.use('/users', userRouter);
-/* for heroku deployment */
 
+/* for heroku deployment */
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static('./client/build'));
   

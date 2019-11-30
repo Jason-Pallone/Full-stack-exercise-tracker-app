@@ -1,22 +1,18 @@
-.App {
-  text-align: center;
+/* had to reduce thead element size to make it fit on mobile/tablet devices, had to add custom margin
+to the delete button because it would not align properly on mobile devices using bootstrap margins. */
+.btn-delete  {
+  margin-left: 2%
 }
 
-.App-logo {
-  height: 40vmin;
+@media(max-width:768px) {
+  thead {
+    font-size: 11px;
+  }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+@media(max-width:515px) {
+  .btn-delete {
+    margin-top: 4%;
+    margin-left: 0%;
+  }
 }

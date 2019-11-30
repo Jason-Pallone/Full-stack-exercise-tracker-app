@@ -4,13 +4,13 @@ import Exercise from './exercise.component'
 
 export default class ExercisesList extends Component {
     state = { exercises: [] }
-
+   
     componentDidMount() {
       /* if in local use http://localhost:5000/exercises/ */
       // retrieves all current exercise logs
       axios.get('/exercises/')
       .then(res => this.setState({ exercises: res.data }))
-      .catch(err => console.error(err))
+      .catch(err => console.error(err));
     } 
 
     deleteExercise=(id)=>{
@@ -33,7 +33,7 @@ export default class ExercisesList extends Component {
       return(
         <div>
           <h3>Logged Exercises</h3> 
-          <table className='table'>
+          <table className='table table-striped'>
             <thead className='thead-light'>
               <tr>
                 <th>Username</th>
@@ -44,10 +44,14 @@ export default class ExercisesList extends Component {
               </tr>
             </thead>
             <tbody>
-              { this.exerciseList() }
+              { this.exerciseList() } 
             </tbody>
-          </table>
-        </div>
+          </table>  
+          { 
+           /* checks to see if there is any current exercise logs, if not, the welcome message below is displayed. */
+           this.state.exercises.length > 0 ? '' : <h5 className='mt-2 text-center'> Welcome! Select "Create User" to get started! </h5> 
+          }
+        </div> 
 
       )
     }
