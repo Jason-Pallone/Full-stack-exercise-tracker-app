@@ -1,15 +1,15 @@
-/* animation for the welcome message */
-
+/* Animation for the welcome message and exercise logs */
 @keyframes fade-in {
   0% {opacity: 0;}
   100%{opacity: 1;}
 }
 
-h5 {
-  animation: fade-in .5s;
+h5,
+.user-exercise {
+  animation: fade-in .7s;
 }
 
-/* had to reduce thead element size to make it fit on mobile/tablet devices, had to add custom margin
+/* Had to reduce thead element size to make it fit on mobile/tablet devices, had to add custom margin
 to the delete button because it would not align properly on mobile devices using bootstrap margins. */
 .btn-delete  {
   margin-left: 2%;

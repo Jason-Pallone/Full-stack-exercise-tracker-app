@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Exercise = props => (
-    <tr>
+    <tr className='user-exercise'>
       <td>{props.exercise.username}</td>
       <td>{props.exercise.description}</td>
       <td>{props.exercise.duration}</td>
